@@ -936,7 +936,9 @@ def build_buttons(ui, tab) -> None:
     #  and all the other buttons
     for button in buttons:
         button.clicked.connect(
-            lambda current_button=button, all_buttons=buttons: button_clicked(current_button, all_buttons)
+            lambda checked=False, current_button=button, all_buttons=buttons: button_clicked(
+                current_button, all_buttons
+            )
         )
 
 
